@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsIsoList < Chef::Knife
+  class CosmicIsoList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs iso list (options)"
+    banner "knife cosmic iso list (options)"
 
     option :listall,
            :long => "--listall",

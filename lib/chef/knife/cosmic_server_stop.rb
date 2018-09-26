@@ -22,7 +22,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsServerStop < Chef::Knife
+  class CosmicServerStop < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -33,7 +33,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs server stop SERVER_NAME [SERVER_NAME ...] (options)"
+    banner "knife cosmic server stop SERVER_NAME [SERVER_NAME ...] (options)"
 
     option :cosmic_force_stop,
            :long => "--force",

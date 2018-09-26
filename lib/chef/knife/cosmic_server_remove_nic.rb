@@ -19,7 +19,7 @@ require 'chef/knife/cosmic_base'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsServerRemoveNic < Chef::Knife
+  class CosmicServerRemoveNic < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
     include Chef::Knife::KnifecosmicBaseList
@@ -30,7 +30,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs server remove nic SERVERID NICID"
+    banner "knife cosmic server remove nic SERVERID NICID"
 
 
     def run
@@ -94,7 +94,7 @@ module Knifecosmic
         puts ui.list(object_list, :uneven_columns_across, columns)
         list_object_fields(connection_result) if locate_config_value(:fieldlist)
       else
-        ui.error("No nics returned in response")
+        ui.error("No nicosmic returned in response")
       end
     end
   end

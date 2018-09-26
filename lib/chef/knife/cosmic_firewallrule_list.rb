@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsFirewallruleList < Chef::Knife
+  class CosmicFirewallruleList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs firewallrule list (options)"
+    banner "knife cosmic firewallrule list (options)"
 
     option :listall,
            :long => "--listall",

@@ -19,7 +19,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsVolumeDetach < Chef::Knife
+  class CosmicVolumeDetach < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -28,7 +28,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner 'knife cs volume detach NAME (options)'
+    banner 'knife cosmic volume detach NAME (options)'
 
     option :name,
            :long => '--name',

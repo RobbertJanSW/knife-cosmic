@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsDomainList < Chef::Knife
+  class CosmicDomainList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
     
-    banner "knife cs domain list (options)"
+    banner "knife cosmic domain list (options)"
 
     option :listall,
            :long => "--listall",

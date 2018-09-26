@@ -20,7 +20,7 @@ require 'chef/knife/cosmic_base'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsStackCreate < Chef::Knife
+  class CosmicStackCreate < Chef::Knife
 
     attr_accessor :current_stack
 
@@ -38,10 +38,10 @@ module Knifecosmic
       Chef::Knife.load_deps
       Chef::Knife::Ssh.load_deps
       Chef::Knife::NodeRunListRemove.load_deps
-      Knifecosmic::CsServerCreate.load_deps
+      Knifecosmic::CosmicServerCreate.load_deps
     end
 
-    banner "knife cs stack create JSON_FILE (options)"
+    banner "knife cosmic stack create JSON_FILE (options)"
 
     option :ssh_user,
            :short => "-x USERNAME",
@@ -66,7 +66,7 @@ module Knifecosmic
     def run
       validate_base_options
       if @name_args.first.nil?
-        ui.error "Please specify json file eg: knife cs stack create JSON_FILE"
+        ui.error "Please specify json file eg: knife cosmic stack create JSON_FILE"
         exit 1
       end
       file_path = File.expand_path(@name_args.first)
@@ -107,7 +107,7 @@ module Knifecosmic
 
     def create_server(server)
 
-      cmd = Knifecosmic::CsServerCreate.new([server[:name]])
+      cmd = Knifecosmic::CosmicServerCreate.new([server[:name]])
       # configure and run command
       # TODO: validate parameters
       cmd.config[:cosmic_url] = config[:cosmic_url]

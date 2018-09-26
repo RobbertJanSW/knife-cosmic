@@ -20,7 +20,7 @@ require 'chef/knife/cosmic_base'
 require 'chef/knife/winrm_base'
 
 module Knifecosmic
-  class CsServerUpdate < Chef::Knife
+  class CosmicServerUpdate < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -31,7 +31,7 @@ module Knifecosmic
       require 'httpclient'
     end
 
-    banner "knife cs server update [SERVER_NAME] (options)"
+    banner "knife cosmic server update [SERVER_NAME] (options)"
 
     def run
       validate_base_options

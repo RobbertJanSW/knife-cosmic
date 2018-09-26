@@ -19,7 +19,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsVolumeAttach < Chef::Knife
+  class CosmicVolumeAttach < Chef::Knife
     include Chef::Knife::KnifecosmicBase
 
     deps do
@@ -27,7 +27,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner 'knife cs volume attach NAME VM (options)'
+    banner 'knife cosmic volume attach NAME VM (options)'
 
     option :volume,
            :long => '--volume VOLUME_NAME',

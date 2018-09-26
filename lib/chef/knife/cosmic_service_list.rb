@@ -22,11 +22,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsServiceList < Chef::Knife
+  class CosmicServiceList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs service list (options)"
+    banner "knife cosmic service list (options)"
 
     option :name,
            :long => "--name NAME",

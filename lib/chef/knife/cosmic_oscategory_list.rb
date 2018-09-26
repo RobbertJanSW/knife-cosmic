@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsOscategoryList < Chef::Knife
+  class CosmicOscategoryList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs oscategory list (options)"
+    banner "knife cosmic oscategory list (options)"
 
     option :keyword,
            :long => "--keyword KEY",

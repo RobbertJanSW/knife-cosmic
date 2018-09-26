@@ -17,7 +17,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsKeypairCreate < Chef::Knife
+  class CosmicKeypairCreate < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -26,7 +26,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs keypair create KEY_NAME (options)"
+    banner "knife cosmic keypair create KEY_NAME (options)"
 
     option :name,
            :long => "--name NAME",

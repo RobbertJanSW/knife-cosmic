@@ -20,7 +20,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsTemplateExtract < Chef::Knife
+  class CosmicTemplateExtract < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -29,7 +29,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs template extract NAME (options)"
+    banner "knife cosmic template extract NAME (options)"
 
     option :name,
            :long => "--name NAME",

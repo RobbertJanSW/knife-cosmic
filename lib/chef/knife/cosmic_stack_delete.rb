@@ -19,7 +19,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsStackDelete < Chef::Knife
+  class CosmicStackDelete < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -29,14 +29,14 @@ module Knifecosmic
       require 'knife-cosmic/connection'
       require 'chef/knife'
       Chef::Knife.load_deps
-      Knifecosmic::CsServerDelete.load_deps
+      Knifecosmic::CosmicServerDelete.load_deps
     end
 
-    banner "knife cs stack delete JSON_FILE (options)"
+    banner "knife cosmic stack delete JSON_FILE (options)"
 
     def run
       if @name_args.first.nil?
-        ui.error "Please specify json file eg: knife cs stack delete JSON_FILE"
+        ui.error "Please specify json file eg: knife cosmic stack delete JSON_FILE"
         exit 1
       end
       file_path = File.expand_path(@name_args.first)
@@ -68,7 +68,7 @@ module Knifecosmic
     end
 
     def delete_server(server_name)
-      cmd = Knifecosmic::CsServerDelete.new([server_name])
+      cmd = Knifecosmic::CosmicServerDelete.new([server_name])
       cmd.config[:yes] = true
       cmd.config[:expunge] = true
       cmd.run_with_pretty_exceptions

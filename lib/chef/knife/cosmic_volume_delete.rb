@@ -19,7 +19,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsVolumeDelete < Chef::Knife
+  class CosmicVolumeDelete < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -30,7 +30,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs volume delete VOLUME_NAME [VOLUME_NAME ...] (options)"
+    banner "knife cosmic volume delete VOLUME_NAME [VOLUME_NAME ...] (options)"
 
     def run
       validate_base_options

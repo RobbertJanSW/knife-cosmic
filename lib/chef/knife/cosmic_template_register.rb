@@ -20,7 +20,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsTemplateRegister < Chef::Knife
+  class CosmicTemplateRegister < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -29,7 +29,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs template register NAME (options)"
+    banner "knife cosmic template register NAME (options)"
 
     option :name,
            :long => "--name NAME",

@@ -19,7 +19,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsServerPasswordreset < Chef::Knife
+  class CosmicServerPasswordreset < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -30,7 +30,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs server passwordreset SERVER_NAME [SERVER_NAME ...] (options)"
+    banner "knife cosmic server passwordreset SERVER_NAME [SERVER_NAME ...] (options)"
 
     def run
       validate_base_options

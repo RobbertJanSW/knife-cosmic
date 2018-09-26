@@ -21,7 +21,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsServerDelete < Chef::Knife
+  class CosmicServerDelete < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -32,7 +32,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs server delete SERVER_NAME [SERVER_NAME ...] (options)"
+    banner "knife cosmic server delete SERVER_NAME [SERVER_NAME ...] (options)"
 
     option :chefserver,
            :long => "--[no-]chefserver",

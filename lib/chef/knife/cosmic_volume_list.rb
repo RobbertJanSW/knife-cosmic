@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsVolumeList < Chef::Knife
+  class CosmicVolumeList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs volume list (options)"
+    banner "knife cosmic volume list (options)"
 
     option :listall,
            :long => "--listall",

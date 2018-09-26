@@ -22,11 +22,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsNetworkList < Chef::Knife
+  class CosmicNetworkList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs network list (options)"
+    banner "knife cosmic network list (options)"
 
     option :listall,
            :long => "--listall",

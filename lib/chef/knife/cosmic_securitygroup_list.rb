@@ -23,11 +23,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsSecuritygroupList < Chef::Knife
+  class CosmicSecuritygroupList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
     
-    banner "knife cs securitygroup list (options)"
+    banner "knife cosmic securitygroup list (options)"
 
     option :name,
            :long => "--name NAME",

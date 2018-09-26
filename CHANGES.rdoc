@@ -1,25 +1,25 @@
 = Changes
 == 2016-03-18 (0.1.0)
-* Added subcommand: <tt>cs volume attach</tt> (David Bruce 3 Jul 2015)
-* Added subcommand: <tt>cs volume detach</tt> (David Bruce 3 Jul 2015)
+* Added subcommand: <tt>cosmic volume attach</tt> (David Bruce 3 Jul 2015)
+* Added subcommand: <tt>cosmic volume detach</tt> (David Bruce 3 Jul 2015)
 * Removed gem depedency (Fred Neubauer 18 Mar 2016)
 
 == 2015-04-24 (0.0.20)
-* Added support for expunge option for <tt>cs server destroy</tt> (Anton Opgenoort 24 Mar 2015)
+* Added support for expunge option for <tt>cosmic server destroy</tt> (Anton Opgenoort 24 Mar 2015)
 * Added support for Chef 12 Client (Sander Botman 24 Apr 2015)
 
 == 2015-03-19 (0.0.19)
-* Added support for --boostrap-proxy for <tt>cs server create</tt> (Rutger Te Nijenhuis 19 Feb 2015)
+* Added support for --boostrap-proxy for <tt>cosmic server create</tt> (Rutger Te Nijenhuis 19 Feb 2015)
 * Bugfix: no implicit conversion of String into Integer error, if no Nic present (Frank Louwers 19 Mar 2015)
 
 == 2014-12-29 (0.0.18)
 * Chef 12 has been released and installation of the plugin fails on certain components while it tries to install the latest chef-gem.
   We are pinning this version on chef 11.0 and we will make the new version 0.1.0 chef 12 compatible.
   If you have a urgent need for this, please drop us a line. (Sander Botman 29 Dec 2014)
-* Added support for --bootstrap-wget-options for <tt>cs server create</tt> (Deepak Sihag 25 Sep 2014)
-* Added subcommand: <tt>cs volume delete</tt> (Muga Nishizawa 7 May 2014)
+* Added support for --bootstrap-wget-options for <tt>cosmic server create</tt> (Deepak Sihag 25 Sep 2014)
+* Added subcommand: <tt>cosmic volume delete</tt> (Muga Nishizawa 7 May 2014)
 * Bugfix: within the README (Warren Bain 15 Apr 2014)
-* Added support for --size for <tt>cs server create</tt> (Muga Nishizawa 14 Apr 2014)
+* Added support for --size for <tt>cosmic server create</tt> (Muga Nishizawa 14 Apr 2014)
 * Bugfix: list_object method calls by invalid typed parameters (Muga Nishizawa 11 Apr 2014)
 * Bugfix: flexibility around ssh port configuration (Warren Bain 9 Apr 2014)
 * Bugfix: cosmetic fix to options indenting (Warren Bain 9 Apr 2014)
@@ -27,39 +27,39 @@
 * Bugfix: fix whitespace (Warren Bain 9 Apr 2014)
 
 == 2014-03-04 (0.0.17)
-* Added support for --isdynamicallyscalable for <tt>cs template register</tt> (Sander Botman, 3 Apr 2014)
-* Added support for --anti-affinity-groups for <tt>cs server create</tt> (John E. Vincent, 2 Apr 2014)
+* Added support for --isdynamicallyscalable for <tt>cosmic template register</tt> (Sander Botman, 3 Apr 2014)
+* Added support for --anti-affinity-groups for <tt>cosmic server create</tt> (John E. Vincent, 2 Apr 2014)
 * Bugfix: on winrm bootstrap (Sander van Harmelen, 26 Mar 2014)
 * Added support for --expunge for destroying server (Ian Southam, 19 Mar 2014)
 * Bugfix: cosmetic changes on error output (Sander Botman, 5 Mar 2014)
 
 == 2014-02-12 (0.0.16)
-* Added support for --no-public-ip for <tt>cs server list</tt> (Sander Botman, 12 Feb 2014)
-* Added support for secret and secret_file in <tt>cs server create</tt> (Jeremy Baumont, 10 Feb 2014)
-* Bugfix: correction in isextractable on <tt>cs template register</tt> (Etharin, 30 Jan 2014
-* Added support for private-ip in <tt>cs server create</tt> (Joaquim Dos Santos, 26 Jan 2014)
+* Added support for --no-public-ip for <tt>cosmic server list</tt> (Sander Botman, 12 Feb 2014)
+* Added support for secret and secret_file in <tt>cosmic server create</tt> (Jeremy Baumont, 10 Feb 2014)
+* Bugfix: correction in isextractable on <tt>cosmic template register</tt> (Etharin, 30 Jan 2014
+* Added support for private-ip in <tt>cosmic server create</tt> (Joaquim Dos Santos, 26 Jan 2014)
 * Bugfix: Keypair support on stack create (Ben Langfeld, 29 Nov 2013)
 * Bugfix: Bootstrap even without port_rules options (Ben Langfeld, 29 Nov 2013)
-* Bugfix: Option to specify iso as template when deploying instance <tt>cs server create</tt> (Sander Botman, 28 Nov 2013)
+* Bugfix: Option to specify iso as template when deploying instance <tt>cosmic server create</tt> (Sander Botman, 28 Nov 2013)
 * Restructure all list commands (Sander Botman, 28 Nov 2013)
-* Added subcommand: <tt>cs aag list</tt> (John E. Vincent, 23 Nov 2013)
-* Added support for anti-affinity groups in <tt>cs server create</tt> (John E. Vincent, 23 Nov 2013)
-* Added subcommand: <tt>cs server add nic</tt> (John E. Vincent, 13 Nov 2014)
+* Added subcommand: <tt>cosmic aag list</tt> (John E. Vincent, 23 Nov 2013)
+* Added support for anti-affinity groups in <tt>cosmic server create</tt> (John E. Vincent, 23 Nov 2013)
+* Added subcommand: <tt>cosmic server add nic</tt> (John E. Vincent, 13 Nov 2014)
 * Added Trademark (David Nalley, 08 Nov 2013)
 * Bugfix: fixing server creation inside basic networks (Sander Botman, 07 Nov 2013)
 
 == 2013-11-04 (0.0.15)
 * Bugfix: fixed the proxy with the option: --cosmic-proxy http://username:password@yourproxy:8080 or use config file. (Sander Botman, 04 Nov 2013)
-* Added subcommand: <tt>cs publicip list</tt> (Sander Botman, 03 Nov 2013)
+* Added subcommand: <tt>cosmic publicip list</tt> (Sander Botman, 03 Nov 2013)
 * Bugfix: removed the chef rest dependency because this is changed in chef 11.8.0 (Sander Botman, 03 Nov 2013)
 * Bugfix: added the option --cosmic-no-ssl-verify in order to ignore ssl verification (Sander Botman, 03 Nov 2013)
-* Added subcommand: <tt>cs forwardrule create</tt> (Sander Botman, 28 Aug 2013)
-* Added subcommand: <tt>cs firewallrule create</tt> (Sander Botman, 28 Aug 2013)
+* Added subcommand: <tt>cosmic forwardrule create</tt> (Sander Botman, 28 Aug 2013)
+* Added subcommand: <tt>cosmic firewallrule create</tt> (Sander Botman, 28 Aug 2013)
 * Added the option: <tt>--set-display-name</tt> to <tt>server create</tt> (Florin Stan, 5 Aug 2013)
 * Added the option: <tt>--keypair</tt> to <tt>server create</tt> (Florin Stan, 31 Jul 2013)
-* Added subcommand: <tt>cs volume create</tt> (Jeremy Baumont, 17 Jul 2013)
+* Added subcommand: <tt>cosmic volume create</tt> (Jeremy Baumont, 17 Jul 2013)
 * Added the option: <tt>--disk</tt> to <tt>server create</tt> (Stanislav Voroniy (voroniys) 13 Jun 2013)
-* Added subcommands: <tt>cs keypair list</tt>, <tt>cs keypair create</tt>, <tt>cs keypair delete</tt> and adding basic zone check. (Sebastian Goasguen (runseb) 29 May 2013)
+* Added subcommands: <tt>cosmic keypair list</tt>, <tt>cosmic keypair create</tt>, <tt>cosmic keypair delete</tt> and adding basic zone check. (Sebastian Goasguen (runseb) 29 May 2013)
 * Bugfix: changed output name to password (Warren Bain, 26 May 2013)
 * Bugfix: various bugfixes and fixing bootstrap context (bacoboy, 22 Apr 2013)
 
@@ -129,7 +129,7 @@
 
 == 2011-10-13 (0.0.10)
 * Support for multi-homed VMs: The --networks option for the <tt>server create</tt> command takes a comma-separated list
-  of network offering names. The created VM will have one nic per network, with nics assigned to networks in the order
+  of network offering names. The created VM will have one nic per network, with nicosmic assigned to networks in the order
   specified (e.g. the first network in the list will be assigned to eth0, the second to eth1 and so on). The --networks
   option replaces the --network option, which supported a single network name.
 * The <tt>server list</tt> command now shows the VM 'displayname' in parentheses when the displayname is defined and is
@@ -156,7 +156,7 @@
 * Fixed nil reference bug in <tt>server list</tt> command.
 
 == 2011-06-05 (0.0.5)
-* Added <tt>--port-rules</tt> option to the <tt>cs server create</tt> command. It accepts a list of port forwarding
+* Added <tt>--port-rules</tt> option to the <tt>cosmic server create</tt> command. It accepts a list of port forwarding
   rules to be created for the server (only applies to servers on a virtual network). See 'Port forwarding rules for
   virtual networks' in README.rdoc for details.
 
@@ -174,11 +174,11 @@
 == 2011-05-22 (0.0.2)
 
 * Added subcommands: <tt>service list</tt>, <tt>template list</tt>, <tt>network list</tt> and <tt>zone list</tt>.
-* Removed -H (and --hostname) option from the <tt>cs server create</tt> command. The host name is now the first
-  argument to the command: <tt>knife cs server create myhostname</tt>. If a host name is not specified, cosmic
+* Removed -H (and --hostname) option from the <tt>cosmic server create</tt> command. The host name is now the first
+  argument to the command: <tt>knife cosmic server create myhostname</tt>. If a host name is not specified, cosmic
   will use an auto-generated name.
 * Added --no-bootstrap option to the server create command. This prevents Chef from being installed on the new server.
-* Fixed help banners (commands were shown as <tt>knife cosmic ...</tt> instead of <tt>knife cs ...</tt>).
+* Fixed help banners (commands were shown as <tt>knife cosmic ...</tt> instead of <tt>knife cosmic ...</tt>).
 * Added README.rdoc.
 
 == 2011-05-15 (0.0.1)

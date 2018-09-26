@@ -20,7 +20,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsForwardruleCreate < Chef::Knife
+  class CosmicForwardruleCreate < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -29,7 +29,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs forwardrule create hostname 8080:8090:TCP (options)"
+    banner "knife cosmic forwardrule create hostname 8080:8090:TCP (options)"
 
     option :openfirewall,
            :long => "--openfirewall",

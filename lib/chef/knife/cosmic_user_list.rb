@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
       
 module Knifecosmic
-  class CsUserList < Chef::Knife
+  class CosmicUserList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs user list (options)"
+    banner "knife cosmic user list (options)"
 
     option :listall,
            :long => "--listall",

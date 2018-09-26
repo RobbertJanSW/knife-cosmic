@@ -22,7 +22,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsServerStart < Chef::Knife
+  class CosmicServerStart < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -33,7 +33,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs server start SERVER_NAME [SERVER_NAME ...] (options)"
+    banner "knife cosmic server start SERVER_NAME [SERVER_NAME ...] (options)"
 
     option :confirm,
            :long => "--confirm",

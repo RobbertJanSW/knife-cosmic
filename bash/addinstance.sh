@@ -68,12 +68,12 @@ function confirm() {
 }
 
 display_gauge 20
-zone_tmp=$(knife cs zone list --noheader --fields "name" | grep -v '^#' )
+zone_tmp=$(knife cosmic zone list --noheader --fields "name" | grep -v '^#' )
 
 # check zone here and exit if no zone info
 
 display_gauge 40
-service_tmp=$(knife cs service list --noheader --fields "name" | grep -v '^#' )
+service_tmp=$(knife cosmic service list --noheader --fields "name" | grep -v '^#' )
 
 environment_tmp=$(knife environment list | grep -v '^#' | grep -v '_default')
 
@@ -96,10 +96,10 @@ if [ "${cosmic_zone}" == "" ]; then clear; exit 1; fi
 cosmic_zone_name=$(get_option "zone_tmp" $cosmic_zone)
 
 display_gauge 60
-template_tmp=$(knife cs template list --noheader --fields "name" --filter "zonename:/${cosmic_zone_name}/i,ostypename:/${cosmic_os_name}/i" | grep -v '^#' )
+template_tmp=$(knife cosmic template list --noheader --fields "name" --filter "zonename:/${cosmic_zone_name}/i,ostypename:/${cosmic_os_name}/i" | grep -v '^#' )
 
 display_gauge 80
-network_tmp=$(knife cs network list --noheader --fields "name" --filter "zonename:/${cosmic_zone_name}/i" | grep -v '^#' )
+network_tmp=$(knife cosmic network list --noheader --fields "name" --filter "zonename:/${cosmic_zone_name}/i" | grep -v '^#' )
 
 cosmic_service=$(choose_option "service_tmp" "cosmic Services" "Please choose an service")
 if [ "${cosmic_service}" == "" ]; then clear; exit 1; fi
@@ -137,10 +137,10 @@ if [ ! "${cosmic_confirm}" == "0" ]; then clear; exit 1; fi
 if [ "$cosmic_os_name" == "windows" ]
 then
   echo Launching Windows instance and using WINRM to bootstrap.
-  knife cs server create $cosmic_node_name --node-name "$cosmic_node_name" --template "$cosmic_template_name" --service "$cosmic_service_name" --zone "$cosmic_zone_name" --network "$cosmic_network_name" --bootstrap-protocol winrm --cosmic-password --environment $cosmic_environment_name
+  knife cosmic server create $cosmic_node_name --node-name "$cosmic_node_name" --template "$cosmic_template_name" --service "$cosmic_service_name" --zone "$cosmic_zone_name" --network "$cosmic_network_name" --bootstrap-protocol winrm --cosmic-password --environment $cosmic_environment_name
 
 else
   echo Launching Linux instance and using SSH to bootstrap.
-  knife cs server create $cosmic_node_name --node-name "$cosmic_node_name" --template "$cosmic_template_name" --service "$cosmic_service_name" --zone "$cosmic_zone_name" --network "$cosmic_network_name"  --bootstrap-protocol ssh --cosmic-password --environment "$cosmic_environment_name"
+  knife cosmic server create $cosmic_node_name --node-name "$cosmic_node_name" --template "$cosmic_template_name" --service "$cosmic_service_name" --zone "$cosmic_zone_name" --network "$cosmic_network_name"  --bootstrap-protocol ssh --cosmic-password --environment "$cosmic_environment_name"
 fi
 

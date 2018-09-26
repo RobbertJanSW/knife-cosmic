@@ -20,7 +20,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsTemplateCreate < Chef::Knife
+  class CosmicTemplateCreate < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -29,7 +29,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs template create NAME (options)"
+    banner "knife cosmic template create NAME (options)"
 
     option :displaytext,
            :long => "--displaytext DISPLAYTEXT",

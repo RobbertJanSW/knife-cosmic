@@ -22,7 +22,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsServerReboot < Chef::Knife
+  class CosmicServerReboot < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -33,7 +33,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs server reboot SERVER_NAME [SERVER_NAME ...] (options)"
+    banner "knife cosmic server reboot SERVER_NAME [SERVER_NAME ...] (options)"
 
     def run
       validate_base_options

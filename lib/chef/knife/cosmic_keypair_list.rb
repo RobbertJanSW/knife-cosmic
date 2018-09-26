@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsKeypairList < Chef::Knife
+  class CosmicKeypairList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs keypair list (options)"
+    banner "knife cosmic keypair list (options)"
 
     def run
       validate_base_options

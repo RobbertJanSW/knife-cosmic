@@ -17,7 +17,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsKeypairDelete < Chef::Knife
+  class CosmicKeypairDelete < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -26,7 +26,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs keypair delete KEY_NAME (options)"
+    banner "knife cosmic keypair delete KEY_NAME (options)"
 
     option :name,
            :long => "--name NAME",

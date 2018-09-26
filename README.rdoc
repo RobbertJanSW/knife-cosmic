@@ -19,7 +19,7 @@ Depending on your system's configuration, you may need to run this command with 
 In order to communicate with the cosmic API you will have to tell Knife about your cosmic API Key, your Secret Key and the URL of the API endpoint.
 The easiest way to accomplish this is to create some entries in your <tt>knife.rb</tt> file:
 
-    knife[:cosmic_url] = "http://yourcosmicserver.com:8080/client/api
+    knife[:cosmic_url] = "http://yourcosmicosmicerver.com:8080/client/api
     knife[:cosmic_api_key]  = "Your cosmic API Key"
     knife[:cosmic_secret_key] = "Your cosmic Secret Key"
 
@@ -32,7 +32,7 @@ If your knife.rb file will be checked into a SCM system (ie readable by others) 
 You also have the option of passing your cosmic URL and API/Secret Keys into the individual knife subcommands using the <tt>-U</tt> (or <tt>--cosmic-url</tt>),
 <tt>-A</tt> (or <tt>--cosmic-api-key </tt>) <tt>-K</tt> (or <tt>--cosmic-secret-key</tt>) command options
     # provision a new small RHEL 5.6 webserver
-    knife cs server create my-server -r 'role[webserver]' -S "small" -T "RHEL 5.6 Base" -A 'Your cosmic API Key' -K "Your cosmic Secret Key" --distro "rhel5-gems"
+    knife cosmic server create my-server -r 'role[webserver]' -S "small" -T "RHEL 5.6 Base" -A 'Your cosmic API Key' -K "Your cosmic Secret Key" --distro "rhel5-gems"
 
 Additionally the following options may be set in your <tt>knife.rb</tt>:
 
@@ -51,13 +51,13 @@ To get this plugin to work in public clouds, it is essential that the virtual ne
 
 This plugin provides the following Knife subcommands.  Specific command options can be found by invoking the subcommand with a <tt>--help</tt> flag
 
-=== knife cs <command> list
+=== knife cosmic <command> list
 
 <tt>--filter</tt>               Filters your output on the fields that you specify. Filter can be a string 'name' or regexp '/name/i'
-    Example: knife cs server list --filter "instancename:/i-xxx/i, account:accname"
+    Example: knife cosmic server list --filter "instancename:/i-xxx/i, account:accname"
 
 <tt>--fields</tt>               The fields that you want to display in your output. Default outputs will be shown if no fields are defined.
-    Example: knife cs server list --fields "name, instancename, domain"
+    Example: knife cosmic server list --fields "name, instancename, domain"
 
 <tt>--fieldlist</tt>            This will display all information returned by the cosmic API. These fields can be used within the <tt>--fields</tt> or <tt>--filter</tt> to create custom output.
 The data displayed is based on first result returned in your output. You can get other result by using the <tt>--filter</tt> option.
@@ -65,19 +65,19 @@ The data displayed is based on first result returned in your output. You can get
 <tt>--noheader</tt>             this will remove the column header from the output.
 
 
-=== knife cs server create
+=== knife cosmic server create
 
 Provisions a new server in cosmic and then performs a Chef bootstrap (using the SSH protocol).  The goal of the bootstrap is to get Chef installed on the target
 system so it can run Chef Client with a Chef Server. The main assumption is a baseline OS installation exists (provided by the provisioning). It is primarily
 intended for Chef Client systems that talk to a Chef server.  By default the server is bootstrapped using the 'chef-full' template (default bootstrap option for knife,
-(Ref. http://docs.opscode.com/knife_bootstrap.html). This can be overridden using the <tt>-d</tt> or <tt>--template-file</tt> command options.
+(Ref. http://docosmic.opscode.com/knife_bootstrap.html). This can be overridden using the <tt>-d</tt> or <tt>--template-file</tt> command options.
 VM provided with <tt>--no-bootstrap</tt> option have no forwarded ports or forwared ip rules (in case <tt>--static-nat</tt> is used).
 
 By default, new servers are allocated a public IP address mapping to the cosmic private IP address. If you do not want this behavior, pass the <tt>--no-public-ip</tt> option.
 
 Forcing cloustack to reserve and use a certain private ipv4 address when deploying an instance inside an advanced zone is possible by passing <option>--private-ip</option> followed by the intended ipv4 address. Ip Address must be contained within the network mask of the isolated network, of course.
 
- Example: knife cs server create testvm --private-ip 192.168.1.1 --networks mynetwork
+ Example: knife cosmic server create testvm --private-ip 192.168.1.1 --networks mynetwork
 
 Here mynetwork must have a network mask for example like 192.168.1.0/24.
 
@@ -97,7 +97,7 @@ private port 25 can be stated as simply <tt>25</tt>. A list of such rules for a 
 
 ==== IP forwarding rules
 The <tt>--ipfwd-rules</tt> option takes a comma separated list of ip forwarding rules. These rules are created on public ip appdress assigned obtained with <tt>--static-nat</tt> option.
-(Ref. http://cosmic.apache.org/docs/api/apidocs-4.0.0/root_admin/createIpForwardingRule.html)
+(Ref. http://cosmic.apache.org/docosmic/api/apidocosmic-4.0.0/root_admin/createIpForwardingRule.html)
 
 Ip forwarding rules have the syntax <tt>START_PORT[:END_PORT[:PROTOCOL]]</tt>. <tt>END_PORT</tt> and <tt>PROTOCOL</tt> are optional.
 The default value of <tt>END_PORT</tt> is <tt>START_PORT</tt> and the default <tt>PROTOCOL</tt> is 'TCP'.
@@ -112,12 +112,12 @@ Firewall rules have the syntax <tt>PROTOCOL[:CIDR_LIST[:START_PORT[:END_PORT]]]<
 The default value of <tt>END_PORT</tt> is <tt>START_PORT</tt>, the default <tt>CIDR_LIST</tt> is '0.0.0.0/0'.
 For example, a rule to open firewall for port 80 to everyone would look like <tt>TCP::80</tt> and a rule to open ICMP to internal network would look like <tt>ICMP:10.0.0.0/8</tt>.
 
-=== knife cs server delete
+=== knife cosmic server delete
 
 Deletes an existing server in the currently configured cosmic account.  <b>PLEASE NOTE</b> - this does not delete
 the associated node and client objects from the Chef server.
 
-=== knife cs server list
+=== knife cosmic server list
 
 Displays a list of all servers in the currently configured cosmic account.  <b>PLEASE NOTE</b> - this shows all
 servers associated with the cosmic account including servers that are not registered with a Chef server.
@@ -132,27 +132,27 @@ servers associated with the cosmic account including servers that are not regist
 
 <tt>--action</tt>               This action will be executed on the output of the list command. Actions can be start, stop or destroy.
 
-=== knife cs network list
+=== knife cosmic network list
 Displays a list of all networks available in the currently configured cosmic account. A network can be specified
 when creating a new server by passing the network name as an argument to the -W (or --network) option of the
-<tt>knife cs server create</tt> command.
+<tt>knife cosmic server create</tt> command.
 
 <tt>--listall</tt>              This will list all the networks, depending on the account that you are using.
 
 <tt>--keyword</tt>              Filters your output on the keyword that you specify. 
     Example: --keyword "network1", This will display all networks with 'network1' inside the name.
 
-=== knife cs service list
+=== knife cosmic service list
 Displays a list of all service offerings available in the currently configured cosmic account. A service offering
 can be specified when creating a new server by passing the name as an argument to the -S (or --service) option of the
-<tt>knife cs server create</tt> command.
+<tt>knife cosmic server create</tt> command.
 
 <tt>--keyword</tt>              Filters your output on the service name, just like <tt>--name</tt> here below.
 
 <tt>--name</tt>                 Filters your output on the name that you specify. 
     Example: --name "medium" or --keyword "medium", This will display all cpu service offerings with 'medium' inside the name.
 
-=== knife cs template list
+=== knife cosmic template list
 Displays a list of all templates in the currently configured cosmic account. Featured templates are displayed by default.
 Use the -F (or --filter) option to use a different filter. The allowable filter values are:
 
@@ -163,31 +163,31 @@ Use the -F (or --filter) option to use a different filter. The allowable filter 
 * community - templates that are public
 
 A template can be specified when creating a new server by passing the template name as an argument to the -T
-(or --template) option of the <tt>knife cs server create</tt> command.
+(or --template) option of the <tt>knife cosmic server create</tt> command.
 
 <tt>--listall</tt>              This will list all the templates, depending on the account that you are using.
 
-=== knife cs template create
+=== knife cosmic template create
 Creates a template based on a volumeID
 
-=== knife cs template extract
+=== knife cosmic template extract
 Returns a link where an extractable template can be downloaded
 
-=== knife cs template register
+=== knife cosmic template register
 Creates a template based on a file
 
-=== knife cs volume create
+=== knife cosmic volume create
 Creates a volume based on a name
 
-=== knife cs zone list
+=== knife cosmic zone list
 Displays a list of all zones available in the currently configured cosmic account. A zone can be specified
 when creating a new server by passing the zone name as an argument to the -Z (or --zone) option of the
-<tt>knife cs server create</tt> command.
+<tt>knife cosmic server create</tt> command.
 
 <tt>--keyword</tt>              Filters your output on the keyword that you specify. 
     Example: --keyword "zone1", This will display all zones with 'zone1' inside the name
 
-=== knife cs hosts
+=== knife cosmic hosts
 Convenience command that displays the public ip address and fqdn for all servers. Matches /etc/hosts file format.
 
 <tt>--listall</tt>              This will list all the servers, depending on the account that you are using.
@@ -196,7 +196,7 @@ Convenience command that displays the public ip address and fqdn for all servers
 
 <tt>--name</tt>                 Filters your output on the name that you specify.
 
-==== knife cs account list
+==== knife cosmic account list
 Displays all accounts that are currently in your cosmic environment.
 
 <tt>--listall</tt>              This will list all the possible results, depending on the account that you are using.
@@ -205,45 +205,45 @@ Displays all accounts that are currently in your cosmic environment.
 
 <tt>--name</tt>                  Filters your output on the name that you specify.
 
-==== knife cs cluster list
+==== knife cosmic cluster list
 Displays all clusters that are currently available in your cosmic environment.
 
 <tt>--keyword</tt>               Filters your result based on a keyword.
 
 <tt>--name</tt>                  Filters your output on the name that you specify.
 
-==== knife cs config list
+==== knife cosmic config list
 Displays all the configuration settings that are configured inside the cosmic environment.
 
 <tt>--keyword</tt>               Filters your result based on a keyword.
 
 <tt>--name</tt>                  Filters your output on the name that you specify.
 
-==== knife cs disk list
+==== knife cosmic disk list
 Displays all the disks that are available within cosmic.
 
 <tt>--keyword</tt>               Filters your result based on a keyword.
 
 <tt>--name</tt>                  Filters your output on the name that you specify.
 
-==== knife cs domain list
+==== knife cosmic domain list
 Displays all domains within the cosmic environment.
 
 <tt>--listall</tt>              This will list all the domains, depending on the account that you are using.
 
-==== knife cs firewallrule list
+==== knife cosmic firewallrule list
 Displays all firewall rules that are currently active within your cosmic environment.
 
 <tt>--listall</tt>              This will list all the firewallrules, depending on the account that you are using.
 
 <tt>--keyword</tt>              Filters your result based on a keyword.
 
-==== knife cs host list
+==== knife cosmic host list
 Displays all hosts from the cosmic environment.
 
 <tt>--name</tt>                 Filters your output on the name that you specify.
 
-==== knife cs iso list
+==== knife cosmic iso list
 Displays all iso's that are available within the cosmic environment.
 
 <tt>--listall</tt>              This will list all the iso's, depending on the account that you are using.
@@ -252,23 +252,23 @@ Displays all iso's that are available within the cosmic environment.
 
 <tt>--name</tt>                 Filters your output on the name that you specify.
 
-==== knife cs ostype list
+==== knife cosmic ostype list
 Displays all the os types that are available within the cosmic environment.
 
 <tt>--keyword</tt>              Filters your output on the keyword that you specify.
 
-==== knife cs oscategory list
+==== knife cosmic oscategory list
 Displays all os categories that are available 
 <tt>--keyword</tt>              Filters your output on the keyword that you specify.
 
-==== knife cs pod list
+==== knife cosmic pod list
 Displays all the pods that are currently available within the cosmic environment.
 
 <tt>--keyword</tt>              Filters your result based on a keyword.
 
 <tt>--name</tt>                 Filters your output on the name that you specify.
 
-==== knife cs project list
+==== knife cosmic project list
 Displays all the projects that are within the cosmic environment.
 
 <tt>--listall</tt>              This will list all the projects, depending on the account that you are using.
@@ -277,12 +277,12 @@ Displays all the projects that are within the cosmic environment.
 
 <tt>--name</tt>                 Filters your output on the name that you specify.
 
-==== knife cs publicip list
+==== knife cosmic publicip list
 Displays all public ip's that are used within the cosmic environment.
 
 <tt>--listall</tt>              This will list all the public ip's, depending on the account that you are using.
 
-==== knife cs router list
+==== knife cosmic router list
 Displays all the routers that are within the cosmic environment.
 
 <tt>--listall</tt>              This will list all the routers, depending on the account that you are using.
@@ -291,14 +291,14 @@ Displays all the routers that are within the cosmic environment.
 
 <tt>--name</tt>                 Filters your output on the name that you specify.
 
-==== knife cs user list
+==== knife cosmic user list
 Displays all the users that are available within your account.
 
 <tt>--listall</tt>              This will list all the users, depending on the account that you are using.
 
 <tt>--keyword</tt>              Filters your output on the keyword that you specify.
 
-==== knife cs volume list:
+==== knife cosmic volume list:
 Displays all the volumes that are currently available within the cosmic environment.
 
 <tt>--listall</tt>              This will list all the volumes, depending on the account that you are using.
@@ -307,7 +307,7 @@ Displays all the volumes that are currently available within the cosmic environm
 
 <tt>--name</tt>                 Filters your output on the name that you specify.
 
-=== knife cs stack create
+=== knife cosmic stack create
 Creates a "stack" of servers based on a JSON definition file. Simple orchestration can be performed by
 specifying one or more actions to be executed after a server (or group of servers) is created.
 
@@ -381,16 +381,16 @@ The following actions are under development:
 runlist_add:: Adds an entry from the run list.
 runlist_remove:: Removes an entry from the run list.
 
-=== knife cs stack delete
+=== knife cosmic stack delete
 Deletes all servers in the specified stack definition.
 
-=== knife cs server start
+=== knife cosmic server start
 Starts the specified virtual machine(s).
 
-=== knife cs server stop
+=== knife cosmic server stop
 Stops the specified virtual machine(s). Force stop is optional.
 
-=== knife cs server reboot
+=== knife cosmic server reboot
 Reboots the specified virtual machines(s).
 
 == LICENSE:

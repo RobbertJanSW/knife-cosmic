@@ -19,7 +19,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-  class CsFirewallruleCreate < Chef::Knife
+  class CosmicFirewallruleCreate < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
 
@@ -28,7 +28,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs firewallrule create hostname 8080:8090:TCP:10.0.0.0/24"
+    banner "knife cosmic firewallrule create hostname 8080:8090:TCP:10.0.0.0/24"
 
     option :syncrequest,
            :long => "--sync",
@@ -37,7 +37,7 @@ module Knifecosmic
 
     option :public_ip,
            :long => "--public_ip IP_ADDRESS",
-           :description => "Provide the public IP adrress. This makes it possible to create rules on VPCs"
+           :description => "Provide the public IP adrress. This makes it possible to create rules on VPCosmic"
 
     def run
 

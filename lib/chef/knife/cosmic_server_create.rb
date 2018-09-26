@@ -24,7 +24,7 @@ require 'chef/knife/cosmic_base'
 require 'chef/knife/winrm_base'
 
 module Knifecosmic
-  class CsServerCreate < Chef::Knife
+  class CosmicServerCreate < Chef::Knife
 
     include Chef::Knife::KnifecosmicBase
     include Chef::Knife::WinrmBase
@@ -54,7 +54,7 @@ module Knifecosmic
       Chef::Knife::Bootstrap.load_deps
     end
 
-    banner "knife cs server create [SERVER_NAME] (options)"
+    banner "knife cosmic server create [SERVER_NAME] (options)"
 
     option :cosmic_service,
            :short => "-S SERVICE",

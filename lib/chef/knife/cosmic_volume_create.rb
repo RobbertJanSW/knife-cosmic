@@ -19,7 +19,7 @@
 require 'chef/knife/cosmic_base'
 
 module Knifecosmic
-    class CsVolumeCreate < Chef::Knife
+    class CosmicVolumeCreate < Chef::Knife
 
 	include Chef::Knife::KnifecosmicBase
 
@@ -28,7 +28,7 @@ module Knifecosmic
 	    Chef::Knife.load_deps
 	end
 
-	banner "knife cs volume create NAME (options)"
+	banner "knife cosmic volume create NAME (options)"
 
 	option :name,
 	    :long => "--name NAME",

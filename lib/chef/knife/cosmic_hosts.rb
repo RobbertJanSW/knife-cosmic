@@ -21,7 +21,7 @@ require 'chef/knife/cosmic_base'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsHosts < Chef::Knife
+  class CosmicHosts < Chef::Knife
 
     MEGABYTES = 1024 * 1024
 
@@ -33,7 +33,7 @@ module Knifecosmic
       Chef::Knife.load_deps
     end
 
-    banner "knife cs hosts"
+    banner "knife cosmic hosts"
 
     def run
       validate_base_options

@@ -20,11 +20,11 @@ require 'chef/knife'
 require 'chef/knife/cosmic_baselist'
 
 module Knifecosmic
-  class CsPodList < Chef::Knife
+  class CosmicPodList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
 
-    banner "knife cs pod list (options)"
+    banner "knife cosmic pod list (options)"
 
     option :name,
            :long => "--name NAME",
