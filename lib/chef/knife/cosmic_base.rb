@@ -77,7 +77,7 @@ class Chef
           end
 
           def connection
-            @connection ||= cosmicClient::Connection.new(
+            @connection ||= CosmicClient::Connection.new(
               locate_config_value(:cosmic_url),
               locate_config_value(:cosmic_api_key),
               locate_config_value(:cosmic_secret_key),
