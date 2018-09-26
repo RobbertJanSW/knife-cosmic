@@ -66,8 +66,8 @@
 == 2013-04-14 (0.0.14)
 * Added bash/addinstance.sh script in onder to ease instance creation from cli.
 
-* Added the cs_base.rb to merge all common options.
-* Added the cs_base_list.rb to merge all common options and functions for the list commands.
+* Added the cosmic_base.rb to merge all common options.
+* Added the cosmic_base_list.rb to merge all common options and functions for the list commands.
 * Added the option: <tt>-P</tt> / <tt>--cosmic-project</tt> to the following commands: <tt>account list</tt>, <tt>firewallrule list</tt>, <tt>hosts</tt>,
   <tt>iso list</tt>, <tt>network list</tt>, <tt>router list</tt>, <tt>server list</tt>, <tt>template list</tt>, <tt>volume list</tt>
 

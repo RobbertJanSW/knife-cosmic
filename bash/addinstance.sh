@@ -83,64 +83,64 @@ ubuntu
 gentoo"
 
 
-cs_node_name=$(get_input "cosmic Node Name" "Enter your node name here")
-if [ "${cs_node_name}" == "" ]; then clear; exit 1; fi
+cosmic_node_name=$(get_input "cosmic Node Name" "Enter your node name here")
+if [ "${cosmic_node_name}" == "" ]; then clear; exit 1; fi
 
-cs_os=$(choose_option "os_tmp" "cosmic OS" "Please choose your os")
-if [ "${cs_os}" == "" ]; then clear; exit 1; fi
-cs_os_name=$(get_option "os_tmp" $cs_os)
+cosmic_os=$(choose_option "os_tmp" "cosmic OS" "Please choose your os")
+if [ "${cosmic_os}" == "" ]; then clear; exit 1; fi
+cosmic_os_name=$(get_option "os_tmp" $cosmic_os)
 
-cs_zone=$(choose_option "zone_tmp" "cosmic Zones" "Please choose your zone")
-echo "returns: $cs_zone"
-if [ "${cs_zone}" == "" ]; then clear; exit 1; fi
-cs_zone_name=$(get_option "zone_tmp" $cs_zone)
+cosmic_zone=$(choose_option "zone_tmp" "cosmic Zones" "Please choose your zone")
+echo "returns: $cosmic_zone"
+if [ "${cosmic_zone}" == "" ]; then clear; exit 1; fi
+cosmic_zone_name=$(get_option "zone_tmp" $cosmic_zone)
 
 display_gauge 60
-template_tmp=$(knife cs template list --noheader --fields "name" --filter "zonename:/${cs_zone_name}/i,ostypename:/${cs_os_name}/i" | grep -v '^#' )
+template_tmp=$(knife cs template list --noheader --fields "name" --filter "zonename:/${cosmic_zone_name}/i,ostypename:/${cosmic_os_name}/i" | grep -v '^#' )
 
 display_gauge 80
-network_tmp=$(knife cs network list --noheader --fields "name" --filter "zonename:/${cs_zone_name}/i" | grep -v '^#' )
+network_tmp=$(knife cs network list --noheader --fields "name" --filter "zonename:/${cosmic_zone_name}/i" | grep -v '^#' )
 
-cs_service=$(choose_option "service_tmp" "cosmic Services" "Please choose an service")
-if [ "${cs_service}" == "" ]; then clear; exit 1; fi
-cs_service_name=$(get_option "service_tmp" $cs_service)
+cosmic_service=$(choose_option "service_tmp" "cosmic Services" "Please choose an service")
+if [ "${cosmic_service}" == "" ]; then clear; exit 1; fi
+cosmic_service_name=$(get_option "service_tmp" $cosmic_service)
 
-cs_template=$(choose_option "template_tmp" "cosmic Templates" "Please choose an template")
-if [ "${cs_template}" == "" ]; then clear; exit 1; fi
-cs_template_name=$(get_option "template_tmp" $cs_template)
+cosmic_template=$(choose_option "template_tmp" "cosmic Templates" "Please choose an template")
+if [ "${cosmic_template}" == "" ]; then clear; exit 1; fi
+cosmic_template_name=$(get_option "template_tmp" $cosmic_template)
 
-cs_network=$(choose_option "network_tmp" "cosmic Networks" "Please choose an network")
-if [ "${cs_network}" == "" ]; then clear; exit 1; fi
-cs_network_name=$(get_option "network_tmp" $cs_network)
+cosmic_network=$(choose_option "network_tmp" "cosmic Networks" "Please choose an network")
+if [ "${cosmic_network}" == "" ]; then clear; exit 1; fi
+cosmic_network_name=$(get_option "network_tmp" $cosmic_network)
 
 for environment in $environment_tmp
 do
-  if [ "${cs_node_name:0:4}" == "$environment" ]
+  if [ "${cosmic_node_name:0:4}" == "$environment" ]
   then
-    cs_environment_name=${cs_node_name:0:4}
+    cosmic_environment_name=${cosmic_node_name:0:4}
   fi
 done
 
-if [ -z $cs_environment_name ]; then
-  cs_environment=$(choose_option "environment_tmp" "cosmic Environment" "Please choose an environment")
-  if [ "${cs_environment}" == "" ]; then clear; exit 1; fi
-  cs_environment_name=$(get_option "environment_tmp" $cs_environment)
+if [ -z $cosmic_environment_name ]; then
+  cosmic_environment=$(choose_option "environment_tmp" "cosmic Environment" "Please choose an environment")
+  if [ "${cosmic_environment}" == "" ]; then clear; exit 1; fi
+  cosmic_environment_name=$(get_option "environment_tmp" $cosmic_environment)
 fi
 
-cs_confirm=$(confirm "Is this information correct?" "Node name   : $cs_node_name \nZone        : $cs_zone_name \nService     : $cs_service_name \nTemplate    : $cs_template_name\nNetwork     : $cs_network_name\nEnvironment : $cs_environment_name")
-if [ ! "${cs_confirm}" == "0" ]; then clear; exit 1; fi
+cosmic_confirm=$(confirm "Is this information correct?" "Node name   : $cosmic_node_name \nZone        : $cosmic_zone_name \nService     : $cosmic_service_name \nTemplate    : $cosmic_template_name\nNetwork     : $cosmic_network_name\nEnvironment : $cosmic_environment_name")
+if [ ! "${cosmic_confirm}" == "0" ]; then clear; exit 1; fi
 
 
 
 ##### Execute command ####
 
-if [ "$cs_os_name" == "windows" ]
+if [ "$cosmic_os_name" == "windows" ]
 then
   echo Launching Windows instance and using WINRM to bootstrap.
-  knife cs server create $cs_node_name --node-name "$cs_node_name" --template "$cs_template_name" --service "$cs_service_name" --zone "$cs_zone_name" --network "$cs_network_name" --bootstrap-protocol winrm --cosmic-password --environment $cs_environment_name
+  knife cs server create $cosmic_node_name --node-name "$cosmic_node_name" --template "$cosmic_template_name" --service "$cosmic_service_name" --zone "$cosmic_zone_name" --network "$cosmic_network_name" --bootstrap-protocol winrm --cosmic-password --environment $cosmic_environment_name
 
 else
   echo Launching Linux instance and using SSH to bootstrap.
-  knife cs server create $cs_node_name --node-name "$cs_node_name" --template "$cs_template_name" --service "$cs_service_name" --zone "$cs_zone_name" --network "$cs_network_name"  --bootstrap-protocol ssh --cosmic-password --environment "$cs_environment_name"
+  knife cs server create $cosmic_node_name --node-name "$cosmic_node_name" --template "$cosmic_template_name" --service "$cosmic_service_name" --zone "$cosmic_zone_name" --network "$cosmic_network_name"  --bootstrap-protocol ssh --cosmic-password --environment "$cosmic_environment_name"
 fi
 
