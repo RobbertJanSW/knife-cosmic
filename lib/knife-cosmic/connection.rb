@@ -48,7 +48,7 @@ class String
   end
 end
 
-module cosmicClient
+module CosmicClient
   class Connection
 
     ASYNC_POLL_INTERVAL = 5.0
