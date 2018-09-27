@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.authors = ['Robbert-Jan Sperna Weiland']
   s.email = ['rspernaweiland@schubergphilis.com']
   s.summary = %q{A knife plugin for the cosmic API}
-  s.homepage = %q{https://github.com/cosmic-extras/knife-cosmic}
+  s.homepage = %q{https://github.com/RobbertJanSW/knife-cosmic}
   s.description = %q{A Knife plugin to create, list and manage cosmic servers}
 
   s.has_rdoc = false
