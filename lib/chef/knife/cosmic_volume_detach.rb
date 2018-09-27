@@ -1,5 +1,5 @@
 #
-# Author:: David Bruce <dbruce@schubergphilis.com>
+# Original knife-cloudstack author:: David Bruce <dbruce@schubergphilis.com>
 # Copyright:: Copyright (c) Schuberg Philis 2013
 # License:: Apache License, Version 2.0
 #

@@ -1,10 +1,10 @@
 #
-# Author:: Ryan Holmes (<rholmes@edmunds.com>)
-# Author:: KC Braunschweig (<kcbraunschweig@gmail.com>)
-# Author:: Sander Botman (<sbotman@schubergphilis.com>)
-# Author:: Frank Breedijk (<fbreedijk@schubergphilis.com>)
-# Author:: Sander van Harmelen (<svanharmelen@schubergphilis.com>)
-# Author:: Robbert-Jan Sperna Weiland (<rspernaweiland@schubergphilis.com>)
+# knife-cosmic author:: Robbert-Jan Sperna Weiland (<rspernaweiland@schubergphilis.com>)
+# Original knife-cloudstack author:: Ryan Holmes (<rholmes@edmunds.com>)
+# Original knife-cloudstack author:: KC Braunschweig (<kcbraunschweig@gmail.com>)
+# Original knife-cloudstack author:: Sander Botman (<sbotman@schubergphilis.com>)
+# Original knife-cloudstack author:: Frank Breedijk (<fbreedijk@schubergphilis.com>)
+# Original knife-cloudstack author:: Sander van Harmelen (<svanharmelen@schubergphilis.com>)
 # Copyright:: Copyright (c) 2011 Edmunds, Inc.
 # License:: Apache License, Version 2.0
 #

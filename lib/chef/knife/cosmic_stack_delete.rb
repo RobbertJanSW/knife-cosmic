@@ -1,5 +1,5 @@
 #
-# Author:: Ryan Holmes (<rholmes@edmunds.com>)
+# Original knife-cloudstack author:: Ryan Holmes (<rholmes@edmunds.com>)
 # Copyright:: Copyright (c) 2011 Edmunds, Inc.
 # License:: Apache License, Version 2.0
 #

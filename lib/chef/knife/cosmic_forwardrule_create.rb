@@ -1,6 +1,6 @@
 #
-# Author:: Sander Botman (<sbotman@schubergphilis.com>)
-# Author:: Robbert-Jan Sperna Weiland (<rspernaweiland@schubergphilis.com>)
+# knife-cosmic author:: Robbert-Jan Sperna Weiland (<rspernaweiland@schubergphilis.com>)
+# Original knife-cloudstack author:: Sander Botman (<sbotman@schubergphilis.com>)
 # Copyright:: Copyright (c) 2013 Sander Botman.
 # License:: Apache License, Version 2.0
 #

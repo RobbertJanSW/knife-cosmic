@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Author:: Sander Botman (<sbotman@schubergphilis.com>)
+# Original knife-cloudstack author:: Sander Botman (<sbotman@schubergphilis.com>)
 # Copyright:: Copyright (c) 2013 Sander Botman.
 # License:: Apache License, Version 2.0
 #

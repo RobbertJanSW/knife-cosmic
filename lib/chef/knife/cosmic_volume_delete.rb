@@ -1,5 +1,5 @@
 #
-# Author:: Muga Nishizawa (<muga.nishizawa@gmail.com>)
+# Original knife-cloudstack author:: Muga Nishizawa (<muga.nishizawa@gmail.com>)
 # Copyright:: Copyright (c) 2014 Muga Nishizawa.
 # License:: Apache License, Version 2.0
 #

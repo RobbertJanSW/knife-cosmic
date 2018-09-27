@@ -1,6 +1,6 @@
 #
-# Author:: Ryan Holmes (<rholmes@edmunds.com>)
-# Author:: KC Braunschweig (<kcbraunschweig@gmail.com>)
+# Original knife-cloudstack author:: Ryan Holmes (<rholmes@edmunds.com>)
+# Original knife-cloudstack author:: KC Braunschweig (<kcbraunschweig@gmail.com>)
 # Copyright:: Copyright (c) 2011 Edmunds, Inc.
 # License:: Apache License, Version 2.0
 #
