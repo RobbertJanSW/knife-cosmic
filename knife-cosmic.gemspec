@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = %q{knife-cosmic}
-  s.version = "0.1.0"
-  s.date = %q{2016-03-18}
+  s.version = "0.2.0"
+  s.date = %q{2018-09-27}
   s.authors = ['Robbert-Jan Sperna Weiland']
   s.email = ['rspernaweiland@schubergphilis.com']
   s.summary = %q{A knife plugin for the cosmic API}
