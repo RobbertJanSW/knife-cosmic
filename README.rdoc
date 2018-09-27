@@ -395,12 +395,12 @@ Reboots the specified virtual machines(s).
 
 == LICENSE:
 
-Author:: Ryan Holmes <rholmes@edmunds.com> 
-Author:: KC Braunschweig <kcbraunschweig@gmail.com>
-Author:: John E. Vincent <lusis.org+github.com@gmail.com>
-Author:: Sander Botman <sbotman@schubergphilis.com>
-Author:: Frank Breedijk <fbreedijk@schubergphilis.com>
-Author:: Jeremy Baumont <jbaumont@schubergphilis.com>
+Original knife-cloudstack author:: Ryan Holmes <rholmes@edmunds.com> 
+Original knife-cloudstack author:: KC Braunschweig <kcbraunschweig@gmail.com>
+Original knife-cloudstack author:: John E. Vincent <lusis.org+github.com@gmail.com>
+Original knife-cloudstack author:: Sander Botman <sbotman@schubergphilis.com>
+Original knife-cloudstack author:: Frank Breedijk <fbreedijk@schubergphilis.com>
+Original knife-cloudstack author:: Jeremy Baumont <jbaumont@schubergphilis.com>
 Copyright:: Copyright (c) 2011 Edmunds, Inc.
 License:: Apache License, Version 2.0
 

@@ -1,5 +1,5 @@
 #
-# Author:: John E. Vincent (<lusis.org+github.com@gmail.com>)
+# Original knife-cloudstack author:: John E. Vincent (<lusis.org+github.com@gmail.com>)
 # Copyright:: Copyright (c) 2013 John E. Vincent.
 # License:: Apache License, Version 2.0
 #

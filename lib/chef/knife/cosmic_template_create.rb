@@ -1,6 +1,6 @@
 #
-# Author:: Sander Botman (<sbotman@schubergphilis.com>)
-# Author:: Frank Breedijk (<fbreedijk@schubergphilis.com>)
+# Original knife-cloudstack author:: Sander Botman (<sbotman@schubergphilis.com>)
+# Original knife-cloudstack author:: Frank Breedijk (<fbreedijk@schubergphilis.com>)
 # Copyright:: Copyright (c) 2013 
 # License:: Apache License, Version 2.0
 #

@@ -1,5 +1,5 @@
 #
-# Author:: Jeremy Baumont (<jbaumont@schubergphilis.com>)
+# Original knife-cloudstack author:: Jeremy Baumont (<jbaumont@schubergphilis.com>)
 # Copyright:: Copyright (c) Schuberg Philis 2013 
 # License:: Apache License, Version 2.0
 #

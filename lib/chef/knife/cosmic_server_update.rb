@@ -1,5 +1,5 @@
 #
-# Author:: Robbert-Jan Sperna Weiland (<rspernaweiland@schubergphilis.com>)
+# knife-cosmic author:: Robbert-Jan Sperna Weiland (<rspernaweiland@schubergphilis.com>)
 # Copyright:: Copyright (c) 2018 Robbert-Jan Sperna Weiland.
 # License:: Apache License, Version 2.0
 #
