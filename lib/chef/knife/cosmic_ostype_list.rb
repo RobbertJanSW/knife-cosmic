@@ -23,7 +23,7 @@ module Knifecosmic
   class CosmicOstypeList < Chef::Knife
 
     include Chef::Knife::KnifecosmicBaseList
-    
+
     banner "knife cosmic ostype list (options)"
 
     option :keyword,
@@ -43,9 +43,13 @@ module Knifecosmic
       params['filter']  = locate_config_value(:filter)  if locate_config_value(:filter)
       params['listall'] = locate_config_value(:listall) if locate_config_value(:listall)
       params['keyword'] = locate_config_value(:keyword) if locate_config_value(:keyword)
-      
-      result = connection.list_object(params, "ostype")
-      list_object(columns, result)
+
+      @ostypelist_result = connection.list_object(params, "ostype")
+      list_object(columns, @ostypelist_result)
+    end
+
+    def ostypelist
+      @ostypelist_result
     end
 
   end
