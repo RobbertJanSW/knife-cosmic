@@ -20,6 +20,8 @@ require 'chef/knife/cosmic_base'
 
 module Knifecosmic
   class CosmicFirewallruleCreate < Chef::Knife
+    class << self; attr_accessor :rules_created end
+    @rules_created = []
 
     include Chef::Knife::KnifecosmicBase
 
@@ -76,11 +78,9 @@ module Knifecosmic
         exit 1
       end
 
- 
       @name_args.each do |rule|
-        create_port_forwarding_rule(ip_address, server['id'], rule, connection, params)
+        @rules_created << create_port_forwarding_rule(ip_address, server['id'], rule, connection, params)
       end
-
     end
  
     def create_port_forwarding_rule(ip_address, server_id, rule, connection, other_params)
@@ -128,6 +128,7 @@ module Knifecosmic
       if locate_config_value(:syncrequest) 
         result = connection.send_request(params)
         Chef::Log.debug("JobResult: #{result}")
+        result
       else
         result = connection.send_async_request(params)
         Chef::Log.debug("AsyncJobResult: #{result}")
