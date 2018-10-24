@@ -23,10 +23,6 @@ module Knifecosmic
 
     include Chef::Knife::KnifecosmicBase
 
-    def initialize()
-      @rules_created = []
-    end
-
     deps do
       require 'knife-cosmic/connection'
       Chef::Knife.load_deps
@@ -44,6 +40,7 @@ module Knifecosmic
            :description => "Provide the public IP adrress. This makes it possible to create rules on VPCosmic"
 
     def run
+      @rules_created = []
 
       @hostname = @name_args.shift
       unless /^[a-zA-Z0-9][a-zA-Z0-9-]*$/.match @hostname then
