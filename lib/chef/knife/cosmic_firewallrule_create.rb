@@ -21,7 +21,6 @@ require 'chef/knife/cosmic_base'
 module Knifecosmic
   class CosmicFirewallruleCreate < Chef::Knife
     class << self; attr_accessor :rules_created end
-    @rules_created = []
 
     include Chef::Knife::KnifecosmicBase
 
@@ -42,6 +41,7 @@ module Knifecosmic
            :description => "Provide the public IP adrress. This makes it possible to create rules on VPCosmic"
 
     def run
+      @rules_created = []
 
       @hostname = @name_args.shift
       unless /^[a-zA-Z0-9][a-zA-Z0-9-]*$/.match @hostname then
@@ -132,7 +132,6 @@ module Knifecosmic
       else
         result = connection.send_async_request(params)
         Chef::Log.debug("AsyncJobResult: #{result}")
-        result
       end
     end
 
