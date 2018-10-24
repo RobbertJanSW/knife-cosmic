@@ -137,7 +137,7 @@ module Knifecosmic
       end
     end
 
-    def rules_created()
+    def rules_created
       @rules_created
     end
 
