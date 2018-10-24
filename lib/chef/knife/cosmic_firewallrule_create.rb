@@ -132,6 +132,7 @@ module Knifecosmic
       else
         result = connection.send_async_request(params)
         Chef::Log.debug("AsyncJobResult: #{result}")
+        result
       end
     end
 
