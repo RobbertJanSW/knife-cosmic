@@ -295,6 +295,20 @@ module CosmicClient
     end
 
     ##
+    # Deletes the server with the specified name.
+    #
+
+    def networkacl_delete(id)
+      params = {
+          'command' => 'deleteNetworkACL',
+          'id' => id
+      }
+
+      json = send_request(params)
+      json['success']
+    end
+
+    ##
     # Stops the server with the specified name.
     #
 
