@@ -30,12 +30,12 @@ module Knifecosmic
     include Chef::Knife::WinrmBase
 
     # Seconds to delay between detecting ssh and initiating the bootstrap
-    BOOTSTRAP_DELAY = 20
+    BOOTSTRAP_DELAY ||= 20
     #The machine will reboot once so we need to handle that
-    WINRM_BOOTSTRAP_DELAY = 200
+    WINRM_BOOTSTRAP_DELAY ||= 200
 
     # Seconds to wait between ssh pings
-    SSH_POLL_INTERVAL = 10
+    SSH_POLL_INTERVAL ||= 10
 
     deps do
       require 'chef/knife/bootstrap'
